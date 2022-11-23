@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="pascal">
+
+    </div>
+    <script>
+        var faktor = (n) => {
+            if (n === 0 || n === 1) {
+                return 1;
+            } else {
+                return n * faktor(n - 1)
+            }
+
+        }
+        var pascal = document.getElementById("pascal");
+        var méret = 10;
+        for (var s = 0; s <= méret; s++) {
+            var újSor = document.createElement("div")
+            újSor.classList.add("sor");
+            /* újSor.innerHTML = "*";*/
+            pascal.appendChild(újSor);
+
+            for (var o = 0; o < s; o++) {
+                var újElem = document.createElement("div");
+                újElem.innerHTML = faktor(s)/ (faktor(o) * faktor(s - o)) ;
+                újElem.classList.add("elem");
+                újSor.appendChild(újElem);
+            }
+
+        }
+
+      
+       
+
+
+    </script>
+
+</body>
+</html>

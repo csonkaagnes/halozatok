@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="stilus.css" rel="stylesheet" />
+    <script>
+        var viccek;
+        function letöltés() {
+            fetch('/jokes.json')
+                .then(response => response.json())
+                .then(data => letöltésBefejeződött(data)
+                );
+        }
+
+        function letöltésBefejeződött(d) {
+            for (var i = 0; i < viccek.length; i++) {
+                console.log("Sikeres letöltés")
+                console.log(d)
+                viccek = d;
+            }
+           
+        }
+
+        window.onload = letöltés();
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
